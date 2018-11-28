@@ -8,7 +8,7 @@
 
     <style>
         body {
-            background-color: lemonchiffon
+            background-color: rgb(255, 55, 88)
         }
     </style>
 </head>

@@ -70,6 +70,10 @@ def member():
     output = template('members', rows=result)
     return output
 
+@route('/static/<skra>')
+def static_skrar(skra):
+    return static_file(skra, root="/static/")
+
 try:
   run(host='0.0.0.0', port=os.environ.get('PORT'), app=app)
 
