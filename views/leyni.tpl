@@ -83,41 +83,11 @@
     <div class="header">
         <h2>BANANA BLOGG&trade;</h2>
       </div>
-      
-      <div class="row">
-        <div class="leftcolumn">
-          <div class="card">
-
-              <h2></h2>
-              <h5>Title description, Dec 7, 2017</h5>
-              <div class="fakeimg" style="height:200px;">Image</div>
-              <p>Some text..</p>
-          </div>
-          <div class="card">
-            <h2>TITLE HEADING</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text..</p>
-          </div>
-        </div>
-        <div class="rightcolumn">
-          <div class="card">
-            <h2>Um mig: </h2>
-            <div class="fakeimg" style="height:100px;">Image</div>
-            <p>Ég heiti </p>
-          </div>
-          <div class="card">
-            <h3>Vinsæl blogg</h3>
-            <div class="fakeimg">Image</div><br>
-            <div class="fakeimg">Image</div><br>
-            <div class="fakeimg">Image</div>
-          </div>
-          <div class="card">
-            <h3>Follow Me</h3>
-            <p>Some text..</p>
-          </div>
-        </div>
-      </div>
+      <h1>Skrifa blogg:</h1>
+      <form method="POST" action="/comment" accept-charset="ISO-8859-1" id="comm">
+        <textarea name="comment" rows="20" cols="200"></textarea>
+        <input type="submit" name="Skrifa">
+      </form>
       
       <div class="footer">
         <h2>Footer</h2>

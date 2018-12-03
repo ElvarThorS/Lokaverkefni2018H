@@ -81,6 +81,10 @@ def member():
     output = template('members', rows=result)
     return output
 
+@route('/blogg')
+def blogg():
+    return template('bloggpost')
+
 @route('/static/<skra>')
 def static_skrar(skra):
     return static_file(skra, root="/static/")

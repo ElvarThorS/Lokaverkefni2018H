@@ -23,6 +23,9 @@ REFERENCES 1106012980_vef2_lokaverkefni.users(user)
 );
 
 insert into 1106012980_vef2_lokaverkefni.blogg
-VALUES(1,"Elvar Þór Sævarsson","Bananar geislavirkir?","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat eu neque at semper. Donec tincidunt vehicula eleifend. Sed bibendum imperdiet sodales. Phasellus laoreet congue nibh, et eleifend quam condimentum nec.","Elvar Þór Sævarsson")bloggID
+VALUES(1,"Elvar","Bananar geislavirkir?","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat eu neque at semper. Donec tincidunt vehicula eleifend. Sed bibendum imperdiet sodales. Phasellus laoreet congue nibh, et eleifend quam condimentum nec.","Elvar Þór Sævarsson");
+
+insert into 1106012980_vef2_lokaverkefni.blogg
+VALUES(2,"Sigursteinn","Afhverju eru bananar góðir?","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat eu neque at semper. Donec tincidunt vehicua eleifend. Sed bibendum imperdiet sodales. Phasellus laoreet congue nibh, et eleifend quam condimentum nec.","Elvar Þór Sævarsson");
 
 DROP TABLE 1106012980_vef2_lokaverkefni.blogg
