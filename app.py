@@ -7,6 +7,15 @@ from bottle import *
 
 @get('/')
 def index():
+    #u = request.forms.get('user')
+    #p = request.forms.get('pass')
+    #n = request.forms.get('nafn')
+
+    #conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1106012980', passwd='mypassword', db='1106012980_vef2_lokaverkefni')
+    #c = conn.cursor()
+    #c.execute("SELECT user FROM 1106012980_vef2_lokaverkefni.users")
+    #result = c.fetchall() 
+    #c.close()
     return template('index')
 
 @route('/innskra')
@@ -24,6 +33,7 @@ def nyr():
     p = request.forms.get('pass')
     n = request.forms.get('nafn')
 
+
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1106012980', passwd='mypassword', db='1106012980_vef2_lokaverkefni')
     cur = conn.cursor()
 
@@ -31,7 +41,7 @@ def nyr():
     result = cur.fetchone()
 
     if result[0] == 0:
-        cur.execute("INSERT INTO 1106012980_vef2_lokaverkefni.users Values(%s,%s,%s)", (u, p, n))
+        cur.execute("INSERT INTO 1106012980_vef2_lokaverkefni.users Values(%s,%s,%s)", (u, p))
         conn.commit()
         cur.close()
         conn.close()
@@ -43,6 +53,7 @@ def nyr():
 def doinn():
     u = request.forms.get('user')
     p = request.forms.get('pass')
+    
 
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1106012980', passwd='mypassword', db='1106012980_vef2_lokaverkefni')
     cur = conn.cursor()

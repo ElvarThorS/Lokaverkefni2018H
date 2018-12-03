@@ -19,7 +19,9 @@
 			padding: 5px;
 			width: 90px;
 			border-radius: 10px;
-			background-color: yellow
+			background-color: yellow;
+      display: block;
+      float: right;
 		}
 
         /* Header/Blog Title */
@@ -88,53 +90,58 @@
 	</style>
 </head>
 <body>
-	<div class= "division">
-		<a class = "takkar" href="/innskra">Innskráning</a>
-	</div>
-	<div class= "division">
-		<a class = "takkar" href="/nyskra">Nýskráning</a>
-	</div>	
-    <div class="header">
-        <h2>BANANA BLOGG&trade;</h2>
-      </div>
-      
-      <div class="row">
-        <div class="leftcolumn">
-          <div class="card">
-            <h2>TITLE HEADING</h2>
-            <h5>Title description, Dec 7, 2017</h5>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text..</p>
+  
+  <div class= "division">
+    <a class = "takkar" href="/innskra">Innskráning</a>
+  </div>
+  <div class= "division">
+    <a class = "takkar" href="/nyskra">Nýskráning</a>
+  </div>	
+  <div class="header">
+    <h2>BANANA BLOGG&trade;</h2>
+  </div>
+  % import pymysql
+  % conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1106012980', passwd='mypassword', db='1106012980_vef2_lokaverkefni')
+  % c = conn.cursor()
+  % c.execute("SELECT * FROM 1106012980_vef2_lokaverkefni.users")
+  % for i in c:      
+        <div class="row">
+          <div class="leftcolumn">
+            <div class="card">
+              <h2>{{i[0]}}</h2>
+              <h5>Title description, Dec 7, 2017</h5>
+              <div class="fakeimg" style="height:200px;">Image</div>
+              <p>Some text..</p>
+            </div>
+            <div class="card">
+              <h2>{{i[0]}}</h2>
+              <h5>Title description, Sep 2, 2017</h5>
+              <div class="fakeimg" style="height:200px;">Image</div>
+              <p>Some text..</p>
+            </div>
           </div>
-          <div class="card">
-            <h2>TITLE HEADING</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text..</p>
+          <div class="rightcolumn">
+            <div class="card">
+              <h2>Um BANANA BLOGG&trade;</h2>
+              <div class="fakeimg" style="height:100px;">Image</div>
+              <p>BANANA BLOGG&trade; er stutt af DOLE</p>
+            </div>
+            <div class="card">
+              <h3>Vinsæl blogg</h3>
+              <div class="fakeimg">Image</div><br>
+              <div class="fakeimg">Image</div><br>
+              <div class="fakeimg">Image</div>
+            </div>
+            <div class="card">
+              <h3>Follow Me</h3>
+              <p>Some text..</p>
+            </div>
           </div>
         </div>
-        <div class="rightcolumn">
-          <div class="card">
-            <h2>Um mig</h2>
-            <div class="fakeimg" style="height:100px;">Image</div>
-            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-          </div>
-          <div class="card">
-            <h3>Popular Post</h3>
-            <div class="fakeimg">Image</div><br>
-            <div class="fakeimg">Image</div><br>
-            <div class="fakeimg">Image</div>
-          </div>
-          <div class="card">
-            <h3>Follow Me</h3>
-            <p>Some text..</p>
-          </div>
+        
+        <div class="footer">
+          <h2>Footer</h2>
         </div>
-      </div>
-      
-      <div class="footer">
-        <h2>Footer</h2>
-      </div>
-    <a href="/members">Aðrir meðlimir:</a>
+      <a href="/members">Aðrir meðlimir:</a>
 </body>
 </html>
