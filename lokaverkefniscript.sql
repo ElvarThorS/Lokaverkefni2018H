@@ -12,7 +12,7 @@ insert into 1106012980_vef2_lokaverkefni.users
 VALUES("Elvar Þór Sævarsson","12345","Elvar");
 
 CREATE TABLE 1106012980_vef2_lokaverkefni.blogg(
-bloggID INT,
+bloggID INT(9) not null auto_increment, 
 user varchar(32) not null,
 title varchar(32) not null,
 content varchar(255) not null,

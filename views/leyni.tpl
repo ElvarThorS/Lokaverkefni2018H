@@ -8,9 +8,10 @@
     <style>
         body {
         font-family: "Comic Sans MS", cursive, sans-serif	
-;
+;       max-width: 60em;
         padding: 20px;
         background-color: rgb(253, 253, 76);
+        margin: auto;
         }
 
         /* Header/Blog Title */
@@ -84,9 +85,12 @@
         <h2>BANANA BLOGG&trade;</h2>
       </div>
       <h1>Skrifa blogg:</h1>
-      <form method="POST" action="/comment" accept-charset="ISO-8859-1" id="comm">
-        <textarea name="comment" rows="20" cols="200"></textarea>
-        <input type="submit" name="Skrifa">
+      <form method="POST" action="/blogg" accept-charset="ISO-8859-1" id="comm">
+        <label>Titill</label><br>
+        <input type="text" name="title" id="Titill" autofocus required placeholder="Hérna skrifarðu titilinn."><br><br>
+        <textarea name="content" rows="10" cols="100"></textarea>
+        <input type="submit" name="content" autofocus required placeholder="Hérna áttu að skrifa innihaldið á blogginu">
+        <input type="text" name="user" id="Höfundur" autofocus required placeholder="Höfundur">
       </form>
       
       <div class="footer">

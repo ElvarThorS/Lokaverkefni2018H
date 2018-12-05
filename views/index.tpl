@@ -9,9 +9,10 @@
 	<style>
 		body {
         font-family: "Comic Sans MS", cursive, sans-serif	
-;
+;       max-width: 60em;
         padding: 20px;
         background-color: rgb(253, 253, 76);
+        margin:auto;
         }
 
 		.division{
@@ -117,19 +118,9 @@
       <div class="rightcolumn">
         <div class="card">
           <h2>Um BANANA BLOGG&trade;</h2>
-          <div class="fakeimg" style="height:100px;">Image</div>
           <p>BANANA BLOGG&trade; er stutt af DOLE</p>
         </div>
-        <div class="card">
-          <h3>Vinsæl blogg</h3>
-          <div class="fakeimg">Image</div><br>
-          <div class="fakeimg">Image</div><br>
-          <div class="fakeimg">Image</div>
-        </div>
-        <div class="card">
-          <h3>Follow Me</h3>
-          <p>Some text..</p>
-        </div>
+      
       </div>
     </div>
         

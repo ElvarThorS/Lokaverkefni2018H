@@ -83,7 +83,28 @@ def member():
 
 @route('/blogg')
 def blogg():
-    return template('bloggpost')
+    id = request.forms.get("bloggID")
+    u = request.forms.get("user")
+    c = request.forms.get("content")
+    t = request.forms.get("title")
+
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1106012980', passwd='mypassword', db='1106012980_vef2_lokaverkefni')
+    cur = conn.cursor()
+
+
+
+    cur.execute("SELECT count(*) FROM 1106012980_vef2_lokaverkefni.users where hofundur=%s",(u))
+    result = cur.fetchone()
+
+    if result[0] == 1:
+        cur.execute("INSERT INTO 1106012980_vef2_lokaverkefni.blogg Values(%s,%s,%s,%s)", (id,t,c,u))
+        print("INSERT INTO 1106012980_vef2_lokaverkefni.blogg Values(%s,%s,%s,%s)")
+        conn.commit()
+        cur.close()
+        conn.close()
+        return " Bloggið hefur verið skráð <br><a href='/'>Heim</a>"
+    else:
+        return h, " er ekki skráður notandi <br><a href='/'>Heim</a>"
 
 @route('/static/<skra>')
 def static_skrar(skra):
