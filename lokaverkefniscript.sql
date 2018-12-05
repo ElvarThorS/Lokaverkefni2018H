@@ -16,7 +16,6 @@ bloggID INT(9) not null auto_increment,
 user varchar(32) not null,
 title varchar(32) not null,
 content varchar(255) not null,
-hofundur varchar(32) not null,
 primary key(bloggID),
 CONSTRAINT FK_user FOREIGN KEY (user)
 REFERENCES 1106012980_vef2_lokaverkefni.users(user)
