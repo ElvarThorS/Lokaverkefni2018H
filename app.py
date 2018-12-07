@@ -41,7 +41,7 @@ def nyr():
     result = cur.fetchone()
 
     if result[0] == 0:
-        cur.execute("INSERT INTO 1106012980_vef2_lokaverkefni.users Values(%s,%s,%s)", (u, p))
+        cur.execute("INSERT INTO 1106012980_vef2_lokaverkefni.users Values(%s,%s,%s)", (u, p,n))
         conn.commit()
         cur.close()
         conn.close()
@@ -81,9 +81,8 @@ def member():
     output = template('members', rows=result)
     return output
 
-@route('/blogg')
+@route('/blogg', method="POST")
 def blogg():
-    id = request.forms.get("bloggID")
     u = request.forms.get("user")
     c = request.forms.get("content")
     t = request.forms.get("title")
@@ -93,16 +92,15 @@ def blogg():
 
 
 
-    cur.execute("SELECT count(*) FROM 1106012980_vef2_lokaverkefni.users where hofundur=%s",(u))
+    cur.execute("SELECT count(*) FROM 1106012980_vef2_lokaverkefni.users where user=%s",(u))
     result = cur.fetchone()
 
     if result[0] == 1:
-        cur.execute("INSERT INTO 1106012980_vef2_lokaverkefni.blogg Values(%s,%s,%s,%s)", (id,t,c,u))
-        print("INSERT INTO 1106012980_vef2_lokaverkefni.blogg Values(%s,%s,%s,%s)")
+        cur.execute("INSERT INTO 1106012980_vef2_lokaverkefni.blogg (user,title,content) Values(%s,%s,%s)", (u,t,c))
         conn.commit()
         cur.close()
         conn.close()
-        return " Bloggið hefur verið skráð <br><a href='/'>Heim</a>"
+        return template("blogg",u=u,t=t,c=c)
     else:
         return h, " er ekki skráður notandi <br><a href='/'>Heim</a>"
 

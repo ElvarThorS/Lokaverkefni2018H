@@ -85,11 +85,11 @@
         <h2>BANANA BLOGG&trade;</h2>
       </div>
       <h1>Skrifa blogg:</h1>
-      <form method="POST" action="/blogg" accept-charset="ISO-8859-1" id="comm">
+      <form method="POST" action="/blogg" accept-charset="ISO-8859-1" id="blogg">
         <label>Titill</label><br>
         <input type="text" name="title" id="Titill" autofocus required placeholder="Hérna skrifarðu titilinn."><br><br>
         <textarea name="content" rows="10" cols="100"></textarea>
-        <input type="submit" name="content" autofocus required placeholder="Hérna áttu að skrifa innihaldið á blogginu">
+        <input type="submit" name="submit" autofocus required placeholder="Hérna áttu að skrifa innihaldið á blogginu">
         <input type="text" name="user" id="Höfundur" autofocus required placeholder="Höfundur">
       </form>
       
